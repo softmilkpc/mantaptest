@@ -1,0 +1,58 @@
+{
+  "name": "Mantap File Store",
+  "description": "Telegram bot to store your telegram files",
+  "keywords": [
+    "telegram",
+    "best",
+    "Store",
+    "Files"
+  ],
+  "logo": "https://1.bp.blogspot.com/-JvuEERRAbw0/YESNxbe0TzI/AAAAAAAAAZw/cxrp8VU1PbMajFs6i_o5icriPq0l08s8wCLcBGAsYHQ/s1280/mantapjozz.jpg",
+  "success_url": "https://telegram.dog/mantapvids",
+  "website": "https://github.com/softmilkpc/mantapstorages",
+  "repository": "https://github.com/softmilkpc/mantapstorages",
+  "env": {
+    "WEBHOOK": {
+      "description": "Set ANYTHING AJA",
+      "value": "ANYTHING"
+    },
+    "BOT_TOKEN": {
+      "description": "Token Bot , dalam format string.",
+      "value": ""
+    },
+    "API_ID": {
+      "description": "Cek di https://my.telegram.org",
+      "value": ""
+    },
+    "DB_CHANNEL_ID": {
+      "description": "Kasihkan ID Channel telegram elu (Rekom jika diprivate aja)",
+      "value": ""
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Bot updates channel seperti mantapvids (username tanpa @ for forcesub). (atau bisa kosongin aja kalau lu gblk)",
+      "value": "",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "Isi telegram user ID disini",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Cek di https://my.telegram.org",
+      "value": ""
+    }
+  },
+  "addons": [
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
