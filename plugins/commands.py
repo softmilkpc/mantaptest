@@ -22,19 +22,19 @@ async def start(c, m, cb=False):
         send_msg = await m.reply_text("**Processing...**", quote=True)
 
     owner = await c.get_users(int(OWNER_ID))
-    owner_username = owner.username if owner.username else 'Ns_bot_updates'
+    owner_username = owner.username if owner.username else 'mantapvids'
 
     # start text
     text = f"""Hey! {m.from_user.mention(style='md')}
 💡 ** I am Telegram File Store Bot**
 `You can store your Telegram Media for permanent Link!`
-**👲 Maintained By:** {owner.mention(style='md')}
+**Maintained By:** {owner.mention(style='md')}
 """
 
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('Channel 👨‍✈️', url=f"https://t.me/mantapvids"),
+            InlineKeyboardButton('Join Channel', url=f"https://t.me/mantapvids"),
             InlineKeyboardButton('Help 💡', callback_data="help")
         ],
         [
@@ -87,7 +87,7 @@ async def start(c, m, cb=False):
             channel = await c.get_chat(int(chat_id))
             caption += "**--Uploader Details:--**\n\n"
             caption += f"__📢 Channel Name:__ `{channel.title}`\n\n"
-            caption += f"__👤 Channel Id:__ `{channel.id}`\n\n"
+            caption += f"__🗣 User Name:__ @{channel.username}\n\n" if channel.username else ""
             caption += f"__👁 Members Count:__ {channel.members_count}\n\n" if channel.members_count else ""
 
         else: #if file not from channel
