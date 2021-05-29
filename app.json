@@ -1,5 +1,5 @@
 {
-  "name": "Mantap File Store",
+  "name": "File Store",
   "description": "Telegram bot to store your telegram files",
   "keywords": [
     "telegram",
@@ -7,38 +7,38 @@
     "Store",
     "Files"
   ],
-  "logo": "https://1.bp.blogspot.com/-JvuEERRAbw0/YESNxbe0TzI/AAAAAAAAAZw/cxrp8VU1PbMajFs6i_o5icriPq0l08s8wCLcBGAsYHQ/s1280/mantapjozz.jpg",
-  "success_url": "https://telegram.dog/mantapvids",
-  "website": "https://github.com/softmilkpc/mantapstorages",
-  "repository": "https://github.com/softmilkpc/mantapstorages",
+  "logo": "https://telegra.ph/file/bdd3352951be090a56590.jpg",
+  "success_url": "https://telegram.dog/filestore_Nsbot",
+  "website": "https://github.com/Ns-Bots/TG-File-Store",
+  "repository": "https://github.com/Ns-Bots/TG-File-Store",
   "env": {
     "WEBHOOK": {
-      "description": "Set ANYTHING AJA",
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
       "value": "ANYTHING"
     },
     "BOT_TOKEN": {
-      "description": "Token Bot , dalam format string.",
+      "description": "Your bot token, as a string.",
       "value": ""
     },
     "API_ID": {
-      "description": "Cek di https://my.telegram.org",
+      "description": "Get this value from https://my.telegram.org",
       "value": ""
     },
     "DB_CHANNEL_ID": {
-      "description": "Kasihkan ID Channel telegram elu (Rekom jika diprivate aja)",
+      "description": "give me the telegram channel ID here (better this should be private channel)",
       "value": ""
     },
     "UPDATE_CHANNEL": {
-      "description": "Bot updates channel seperti mantapvids (username tanpa @ for forcesub). (atau bisa kosongin aja kalau lu gblk)",
+      "description": "Your bot updates channel like Ns_bot_updates (username without @ for forcesub). (Leave empty it you don't want to add)",
       "value": "",
       "required": false
     },
     "OWNER_ID": {
-      "description": "Isi telegram user ID disini",
+      "description": "give your telegram user id here",
       "value": ""
     },
     "API_HASH": {
-      "description": "Cek di https://my.telegram.org",
+      "description": "Get this value from https://my.telegram.org",
       "value": ""
     }
   },
