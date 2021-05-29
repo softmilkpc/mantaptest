@@ -75,11 +75,12 @@ async def refresh_cb(c, m):
 
     else: #if file not from channel
         user = await c.get_users(int(chat_id))
-        caption += "**--Tutorial Mantapjozz Channel:--**\n\n"
-            caption += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
-            caption += f"__==================__\n"
-            caption += f"__🏩 Channel:__ @mantapvids\n"
-            caption += f"__🏦 Hastag :__ #video #staycolayforlaif\n\n"
+        caption += "\n\n\n**--Uploader Details:--**\n\n"
+        caption += f"__🦚 First Name:__ `{user.first_name}`\n\n"
+        caption += f"__🐧 Last Name:__ `{user.last_name}`\n\n" if user.last_name else ""
+        caption += f"__👁 User Name:__ @{user.username}\n\n" if user.username else ""
+        caption += f"__👤 User Id:__ `{user.id}`\n\n"
+        caption += f"__💬 DC ID:__ {user.dc_id}\n\n" if user.dc_id else ""
 
     await msg.copy(m.from_user.id, caption=caption)
     await m.message.delete()
