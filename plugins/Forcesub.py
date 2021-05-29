@@ -74,9 +74,9 @@ async def refresh_cb(c, m):
     else: #if file not from channel
         user = await c.get_users(int(chat_id))
         caption += "**--Tutorial Mantapjozz Channel:--**\n\n"
-            caption += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
-            caption += f"__==================__\n"
-            caption += f"__🏩 Channel:__ @mantapvids\n"
+        caption += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
+        caption += f"__==================__\n"
+        caption += f"__🏩 Channel:__ @mantapvids\n"
         caption += f"__🦚 First Name:__ `{user.first_name}`\n\n"
 
     await msg.copy(m.from_user.id, caption=caption)
