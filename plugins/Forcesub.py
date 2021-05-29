@@ -14,17 +14,17 @@ async def forcesub(c, m):
         try:
             user = await c.get_chat_member(UPDATE_CHANNEL, m.from_user.id)
             if user.status == "kicked":
-               await m.reply_text("**Hey you are banned 😜**", quote=True)
+               await m.reply_text("**Hey you are banned!!**", quote=True)
                return
         except UserNotParticipant:
-            buttons = [[InlineKeyboardButton(text='Updates Channel 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
+            buttons = [[InlineKeyboardButton(text='Updates Channel', url=f"https://t.me/{UPDATE_CHANNEL}")]]
             if m.text:
                 if (len(m.text.split(' ')) > 1) & ('start' in m.text):
                     chat_id, msg_id = m.text.split(' ')[1].split('_')
-                    buttons.append([InlineKeyboardButton('🔄 Refresh', callback_data=f'refresh+{chat_id}+{msg_id}')])
+                    buttons.append([InlineKeyboardButton('Refresh', callback_data=f'refresh+{chat_id}+{msg_id}')])
             await m.reply_text(
-                f"Hey {m.from_user.mention(style='md')} you need join My updates channel in order to use me 😉\n\n"
-                "__Press the Following Button to join Now 👇__",
+                f"Hey {m.from_user.mention(style='md')} Join dulu ke channel gw kalau mau akses videonya 😉\n\n"
+                "__Pencet Tombol dibawah 👇__",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 quote=True
             )
@@ -44,12 +44,12 @@ async def refresh_cb(c, m):
             user = await c.get_chat_member(UPDATE_CHANNEL, m.from_user.id)
             if user.status == "kicked":
                try:
-                   await m.message.edit("**Hey you are banned 😜**")
+                   await m.message.edit("**Lah ke ban elu gblk 😜**")
                except:
                    pass
                return
         except UserNotParticipant:
-            await m.answer('You are not yet joined our channel. First join and then press refresh button 🤤', show_alert=True)
+            await m.answer('Anda bukan member dari channel telegram kami, silahkan Join channel kami terlebih dahulu lalu pencet refresh', show_alert=True)
             return
         except Exception as e:
             print(e)
@@ -60,7 +60,7 @@ async def refresh_cb(c, m):
     msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
     if msg.empty:
-        return await m.reply_text(f"🥴 Sorry bro your file was missing\n\nPlease contact my owner 👉 {owner.mention(style='md')}")
+        return await m.reply_text(f"Sowry dude your file was missing\n\nPlease contact my owner 👉 {owner.mention(style='md')}")
 
     caption = msg.caption.markdown
 
@@ -70,7 +70,6 @@ async def refresh_cb(c, m):
         caption += f"__📢 Channel Name:__ `{channel.title}`\n\n"
         caption += f"__🗣 User Name:__ @{channel.username}\n\n" if channel.username else ""
         caption += f"__👤 Channel Id:__ `{channel.id}`\n\n"
-        caption += f"__💬 DC ID:__ {channel.dc_id}\n\n" if channel.dc_id else ""
         caption += f"__👁 Members Count:__ {channel.members_count}\n\n" if channel.members_count else ""
 
     else: #if file not from channel
