@@ -25,20 +25,20 @@ async def start(c, m, cb=False):
     owner_username = owner.username if owner.username else 'Ns_bot_updates'
 
     # start text
-    text = f"""Hey! {m.from_user.mention(style='md')}
+    text = f"""Heyyoo! {m.from_user.mention(style='md')}
 
-💡 ** I am Telegram File Store Bot**
+💡 ** I am Telegram Mantap File Area Bot**
 
 `You can store your Telegram Media for permanent Link!`
 
 
-**👲 Maintained By:** {owner.mention(style='md')}
+**Maintained By:** {owner.mention(style='md')}
 """
 
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('My Father 👨‍✈️', url=f"https://t.me/{owner_username}"),
+            InlineKeyboardButton('My Channel 👨‍✈️', url=f"https://t.me/mantapvids"),
             InlineKeyboardButton('Help 💡', callback_data="help")
         ],
         [
@@ -93,7 +93,6 @@ async def start(c, m, cb=False):
             caption += f"__📢 Channel Name:__ `{channel.title}`\n\n"
             caption += f"__🗣 User Name:__ @{channel.username}\n\n" if channel.username else ""
             caption += f"__👤 Channel Id:__ `{channel.id}`\n\n"
-            caption += f"__💬 DC ID:__ {channel.dc_id}\n\n" if channel.dc_id else ""
             caption += f"__👁 Members Count:__ {channel.members_count}\n\n" if channel.members_count else ""
 
         else: #if file not from channel
@@ -102,8 +101,6 @@ async def start(c, m, cb=False):
             caption += f"__🦚 First Name:__ `{user.first_name}`\n\n"
             caption += f"__🐧 Last Name:__ `{user.last_name}`\n\n" if user.last_name else ""
             caption += f"__👁 User Name:__ @{user.username}\n\n" if user.username else ""
-            caption += f"__👤 User Id:__ `{user.id}`\n\n"
-            caption += f"__💬 DC ID:__ {user.dc_id}\n\n" if user.dc_id else ""
 
         await send_msg.delete()
         await msg.copy(m.from_user.id, caption=caption)
