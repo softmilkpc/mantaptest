@@ -36,7 +36,7 @@ async def storefile(c, m):
     text += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
     text += f"__==================__\n"
     text += f"__🏩 Channel:__ @mantapvids\n"
-    text += f"__🏩 Link:__ `https://t.me/{bot.username}?start={base64_string}`\n"
+    text += f"__🏩 Link:__ https://t.me/`{bot.username}`?start=`{base64_string}`\n"
     text += f"__🦚 First Name:__ `{m.from_user.first_name}`\n\n"
 
     # if databacase channel exist forwarding message to channel
