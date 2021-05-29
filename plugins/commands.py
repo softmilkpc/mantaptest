@@ -101,7 +101,7 @@ async def start(c, m, cb=False):
             caption += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
             caption += f"__==================__\n"
             caption += f"__🏩 Channel:__ @mantapvids\n"
-            caption += f"__🏩 Link:__ `https://t.me/{bot.username}?start={base64_string}`\n"
+            caption += f"__🏩 Link:__ https://t.me/`{bot.username}`?start=`{base64_string}`\n"
             caption += f"__🦚 First Name:__ `{user.first_name}`\n\n"
 
         await send_msg.delete()
