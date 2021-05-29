@@ -38,11 +38,12 @@ async def start(c, m, cb=False):
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('My Channel 👨‍✈️', url=f"https://t.me/mantapvids"),
-            InlineKeyboardButton('Help 💡', callback_data="help")
+            InlineKeyboardButton('My Channel', url=f"https://t.me/mantapvids"),
+            InlineKeyboardButton('Help', callback_data="help")
         ],
         [
-            InlineKeyboardButton('About 📕', callback_data="about")
+            InlineKeyboardButton('About', callback_data="about")
+            InlineKeyboardButton('Group Video', url=f"https://za.gl/groupgra")
         ]
     ]
 
@@ -92,15 +93,15 @@ async def start(c, m, cb=False):
             caption += "**--Uploader Details:--**\n\n"
             caption += f"__📢 Channel Name:__ `{channel.title}`\n\n"
             caption += f"__🗣 User Name:__ @{channel.username}\n\n" if channel.username else ""
-            caption += f"__👤 Channel Id:__ `{channel.id}`\n\n"
             caption += f"__👁 Members Count:__ {channel.members_count}\n\n" if channel.members_count else ""
 
         else: #if file not from channel
             user = await c.get_users(int(chat_id))
-            caption += "**--Uploader Details:--**\n\n"
+            caption += "**--Tutorial Mantapjozz Channel:--**\n\n"
+            caption += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
+            caption += f"__==================__\n"
+            caption += f"__🏩 Channel:__ @mantapvids\n"
             caption += f"__🦚 First Name:__ `{user.first_name}`\n\n"
-            caption += f"__🐧 Last Name:__ `{user.last_name}`\n\n" if user.last_name else ""
-            caption += f"__👁 User Name:__ @{user.username}\n\n" if user.username else ""
 
         await send_msg.delete()
         await msg.copy(m.from_user.id, caption=caption)
