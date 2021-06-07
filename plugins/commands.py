@@ -94,7 +94,7 @@ async def start(c, m, cb=False):
             caption += f"__📢 Channel Name:__ `{channel.title}`\n\n"
             caption += f"__🗣 User Name:__ @{channel.username}\n\n" if channel.username else ""
             caption += f"__👁 Members Count:__ {channel.members_count}\n\n" if channel.members_count else ""
-            caption += f"tg://share?url={txt}File%20Link%20👉%20{url}\n\n"
+            caption += f"https://t.me/{bot.username}?start={base64_string}\n"
 
         else: #if file not from channel
             user = await c.get_users(int(chat_id))
@@ -103,7 +103,7 @@ async def start(c, m, cb=False):
             caption += f"__==================__\n"
             caption += f"__🏩 Channel:__ @mantapvids\n"
             caption += f"__🦚 First Name:__ `{user.first_name}`\n\n"
-            caption += f"tg://share?url={txt}File%20Link%20👉%20{url}\n\n"
+            caption += f"https://t.me/{bot.username}?start={base64_string}\n"
 
         await send_msg.delete()
         await msg.copy(m.from_user.id, caption=caption)
