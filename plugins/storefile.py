@@ -36,7 +36,8 @@ async def storefile(c, m):
     text += f"__Untuk menonton video silahkan Klik **download** lalu klik **start** untuk menonton video atau file__\n\n"
     text += f"__==================__\n"
     text += f"__🏩 Channel:__ @mantapvids\n"
-    text += f"__🦚 First Name:__ `{m.from_user.first_name}`\n\n"
+    text += f"__🦚 First Name:__ `{m.from_user.first_name}`\n"
+    text += f"tg://share?url={txt}File%20Link%20👉%20{url}\n\n"
 
     # if databacase channel exist forwarding message to channel
     if DB_CHANNEL_ID:
@@ -94,6 +95,7 @@ async def storefile_channel(c, m):
     text += f"__📢 Channel Name:__ `{m.chat.title}`\n\n"
     text += f"__🗣 User Name:__ @{m.chat.username}\n\n" if m.chat.username else ""
     text += f"__👁 Members Count:__ {m.chat.members_count}\n\n" if m.chat.members_count else ""
+    text += f"tg://share?url={txt}File%20Link%20👉%20{url}\n\n"
 
     # if databacase channel exist forwarding message to channel
     if DB_CHANNEL_ID:
